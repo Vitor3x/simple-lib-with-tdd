@@ -1,0 +1,17 @@
+{
+  "name": "simple-lib-with-tdd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest",
+    "test:watch": "vitest --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "git-commit-msg-linter": "^4.2.1",
+    "vitest": "^0.23.4"
+  }
+}
