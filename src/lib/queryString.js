@@ -1,7 +1,7 @@
 export function queryString(obj) {
-  const entries = Object.entries(obj).map((item) => {
+  const entries = Object.entries(obj).map(item => {
     return `${item[0]}=${item[1]}`;
   });
 
-  return entries.join("&");
+  return entries.join('&');
 }
