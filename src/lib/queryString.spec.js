@@ -21,4 +21,18 @@ describe('Object to query setring', () => {
       'name=Vitor&technologies=ReactJS,Tailwindcss',
     );
   });
+
+  it('should throw an error when an object is passed as value', () => {
+    const obj = {
+      name: 'Joao',
+      technologies: {
+        front: 'Reactjs',
+        backend: 'Nodejs',
+      },
+    };
+
+    expect(() => {
+      queryString(obj);
+    }).toThrowError();
+  });
 });
