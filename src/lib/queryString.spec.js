@@ -10,4 +10,15 @@ describe('Object to query setring', () => {
 
     expect(queryString(obj)).toBe('name=Vitor&profession=developer');
   });
+
+  it('should create a valid query string even when an array is passed as value', () => {
+    const obj = {
+      name: 'Vitor',
+      technologies: ['ReactJS', 'Tailwindcss'],
+    };
+
+    expect(queryString(obj)).toBe(
+      'name=Vitor&technologies=ReactJS,Tailwindcss',
+    );
+  });
 });
