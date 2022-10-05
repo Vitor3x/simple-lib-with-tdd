@@ -58,10 +58,9 @@ describe('Query string to object', () => {
   it('should convert a query string to an object taking care of comma separeted values', () => {
     const qs = 'name=Joao&technologies=Reactjs,Nodejs';
 
-    console.log(parse(qs));
-    // expect(parse(qs)).toEqual({
-    //   name: 'Joao',
-    //   technologies: ['Reactjs', 'Nodejs'],
-    // });
+    expect(parse(qs)).toEqual({
+      name: 'Joao',
+      technologies: ['Reactjs', 'Nodejs'],
+    });
   });
 });
