@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { queryString } from './queryString';
+import { parse, queryString } from './queryString';
 
 describe('Object to query setring', () => {
   it('should create a valid query string when an object is provided', () => {
@@ -34,5 +34,24 @@ describe('Object to query setring', () => {
     expect(() => {
       queryString(obj);
     }).toThrowError();
+  });
+});
+
+describe('Query string to object', () => {
+  it('should convert a query string to object', () => {
+    const qs = 'name=Joao&technologies=Reactjs';
+
+    expect(parse(qs)).toEqual({
+      name: 'Joao',
+      technologies: 'Reactjs',
+    });
+  });
+
+  it('should convert a query string of a single key-value pair to object', () => {
+    const qs = 'name=Joao';
+
+    expect(parse(qs)).toEqual({
+      name: 'Joao',
+    });
   });
 });
