@@ -1,0 +1,23 @@
+// Vitest Snapshot v1
+
+exports[`Cart > getTotal > should return an object with the total and the list of items 1`] = `
+{
+  "items": [
+    {
+      "product": {
+        "price": 35388,
+        "title": "Headset - Logitech",
+      },
+      "quantity": 3,
+    },
+    {
+      "product": {
+        "price": 41872,
+        "title": "Headset - Razer",
+      },
+      "quantity": 2,
+    },
+  ],
+  "total": 189908,
+}
+`;
