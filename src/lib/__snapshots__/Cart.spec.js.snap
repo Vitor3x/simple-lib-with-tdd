@@ -1,6 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`Cart > getTotal > should return an object with the total and the list of items 1`] = `
+exports[`Cart > getTotal > Checkout > should return an object with the total and the list of items 1`] = `
 {
   "items": [
     {
