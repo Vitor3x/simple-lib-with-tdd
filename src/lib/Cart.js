@@ -23,9 +23,18 @@ export default class Cart {
     }, 0);
   }
 
-  checkout() {
+  summary() {
     const total = this.getTotal();
-    const items = this.items;
+    const items = this.item;
+
+    return {
+      total,
+      items,
+    };
+  }
+
+  checkout() {
+    const { total, items } = this.summary();
 
     this.items = [];
 
