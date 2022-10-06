@@ -4,8 +4,13 @@ import Cart from './Cart';
 describe('Cart', () => {
   let cart;
   let product = {
-    title: 'Headset',
+    title: 'Headset - Logitech',
     price: 35388,
+  };
+
+  let product2 = {
+    title: 'Headset - Razer',
+    price: 41872,
   };
 
   beforeEach(() => {
@@ -44,5 +49,21 @@ describe('Cart', () => {
     });
 
     expect(cart.getTotal()).toEqual(35388);
+  });
+
+  it('should update total when a product gets included and then removed', () => {
+    cart.add({
+      product,
+      quantity: 2,
+    });
+
+    cart.add({
+      product: product2,
+      quantity: 2,
+    });
+
+    cart.remove(product);
+
+    expect(cart.getTotal()).toEqual(83744);
   });
 });
