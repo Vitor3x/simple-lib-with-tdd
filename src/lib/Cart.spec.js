@@ -21,7 +21,7 @@ describe('Cart', () => {
     it('should return 0 when getTotal() is executed in a newly created instance', () => {
       const cart = new Cart();
 
-      expect(cart.getTotal()).toEqual(0);
+      expect(cart.getTotal().getAmount()).toEqual(0);
     });
 
     it('should multiply quantity and price and receive the total amount', () => {
@@ -35,7 +35,7 @@ describe('Cart', () => {
 
       cart.add(item);
 
-      expect(cart.getTotal()).toEqual(4000);
+      expect(cart.getTotal().getAmount()).toEqual(4000);
     });
 
     it('should ensure no more than on product exists at a time', () => {
@@ -49,7 +49,7 @@ describe('Cart', () => {
         quantity: 1,
       });
 
-      expect(cart.getTotal()).toEqual(35388);
+      expect(cart.getTotal().getAmount()).toEqual(35388);
     });
 
     it('should update total when a product gets included and then removed', () => {
@@ -65,7 +65,7 @@ describe('Cart', () => {
 
       cart.remove(product);
 
-      expect(cart.getTotal()).toEqual(83744);
+      expect(cart.getTotal().getAmount()).toEqual(83744);
     });
   });
 
@@ -96,7 +96,7 @@ describe('Cart', () => {
       });
 
       expect(cart.summary()).toMatchSnapshot();
-      expect(cart.getTotal()).toBeGreaterThan(0);
+      expect(cart.getTotal().getAmount()).toBeGreaterThan(0);
     });
 
     it('should reset the cart when checkout() is called', () => {
@@ -107,7 +107,7 @@ describe('Cart', () => {
 
       cart.checkout();
 
-      expect(cart.getTotal()).toEqual(0);
+      expect(cart.getTotal().getAmount()).toEqual(0);
     });
   });
 });
